@@ -17,7 +17,7 @@ if (!$validated) {
 }
 // If arrives here, is a valid user.
 echo "<center><p>Welcome $user.</p>";
-echo "<p color='red'>������������������������������</p>
+echo "<p color='red'>������������������������������</p>";
 echo "<p>Congratulation, you are into the system.</p>";
 echo "<font color=lime>".php_uname()."<br></font></center>";
 
