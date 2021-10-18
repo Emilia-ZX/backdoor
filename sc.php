@@ -19,7 +19,7 @@ if (!$validated) {
 echo "<center><p>Welcome $user.</p>";
 echo "<p color='red'>������������������������������</p>";
 echo "<p>Congratulation, you are into the system.</p>";
-echo "<font color=lime>Time On Server : ".date('d M Y H:i:s',time())."</font>";
+echo "<font color=lime>Time On Server : ".date('d M Y H:i:s',time())."</font><br>";
 echo "<font color=lime>".php_uname()."<br></font></center>";
 
 define("self", "???");
